@@ -1,4 +1,9 @@
 <% @comments.each do |comment| %>
-<%= comment.title %>
-<%= comment.story %>
+<div>
+  <hi><%= comment.title %></h1>
+  <p><%= comment.story %></p>
+  <p><%= comment.song %></p>
+  <p><%= comment.singer %></p>
+  <p><%= comment.when %></p>
+</div>
 <% end %>

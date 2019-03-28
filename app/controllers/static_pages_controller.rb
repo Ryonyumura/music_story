@@ -1,4 +1,8 @@
 class StaticPagesController < ApplicationController
+
+  def top
+  end
+
   def index
     @comments= Comment.all
   end
