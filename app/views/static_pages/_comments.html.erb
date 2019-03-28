@@ -1,5 +1,5 @@
 <% @comments.each do |comment| %>
 <div>
-  <hi><%= comment.title %></h1>
+  <%= link_to comment.title, comment_path(comment)%>
 </div>
 <% end %>

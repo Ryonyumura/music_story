@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
+
   def show
-    @comments= Comment.all
+    @comments= Comment.find(params[:id])
   end
 
   def new
