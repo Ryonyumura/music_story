@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def show
-    @comment= Comment.all
+    @comments= Comment.all
   end
 
   def new
@@ -19,6 +19,6 @@ class CommentsController < ApplicationController
 
     private
   def comment_params
-    params.require(:comment).permit(:id,:song,:singer,:story)
+    params.require(:comment).permit(:id,:title,:song,:singer,:story)
   end
 end
