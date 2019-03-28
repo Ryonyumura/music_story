@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-mod-6 col-md-offset-3">
+    <%= form_for(@comment) do |f| %>
+        <%= f.label :タイトル %>
+        <%= f.text_field :title, class:'form-control'%>
+
+        <%= f.label :曲名 %>
+        <%= f.text_field :song %>
+
+        <%= f.label :歌手 %>
+        <%= f.text_field :singer %>
+
+        <%= f.label :思い出 %>
+        <%= f.text_area :story %>
+
+        <%= f.label :いつ %>
+        <%= f.text_field :when %>
+
+      <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

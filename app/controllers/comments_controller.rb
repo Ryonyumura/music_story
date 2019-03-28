@@ -18,6 +18,19 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+      @comment= Comment.find(params[:id])
+  end
+
+  def update
+    @comment= Comment.find(params[:id])
+    if @comment.update_attributes(comment_params)
+        redirect_to static_pages_index_path
+    else
+      redirect_to "edit"
+    end
+  end
+
     private
   def comment_params
     params.require(:comment).permit(:id,:title,:song,:singer,:story)
