@@ -20,4 +20,6 @@
       <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
+  <%= link_to "削除する", comment_path(@comment),method: :delete, data: {confirm: "本当に削除しますか？"} %>
+  <%= link_to "戻る", static_pages_index_path %>
 </div>
