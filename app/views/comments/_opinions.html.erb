@@ -1,0 +1,10 @@
+<% @comment.opinions.each do |opinion| %>
+  <%= opinion.name %>
+  <%= opinion.content %>
+<% end %>
+
+<%= form_for @opinion, url: comment_opinions_path(@comment, @opinion) do |f| %>
+ 	名前: <%= f.text_field :name %> <br>
+ 	コメント: <%= f.text_area :content %> <br>
+ 	<%= f.submit %>
+ 	<% end %>

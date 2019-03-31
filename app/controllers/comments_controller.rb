@@ -1,12 +1,13 @@
 class CommentsController < ApplicationController
 
   def show
-    @comment= Comment.find(params[:id])
+    @comment= Comment.includes(:opinions).find(params[:id])
+    @opinion = Opinion.new
+  
   end
 
   def new
     @comment= Comment.new
-
   end
 
   def create
@@ -37,7 +38,7 @@ class CommentsController < ApplicationController
     redirect_to static_pages_index_path
   end
 
-    private
+private
   def comment_params
     params.require(:comment).permit(:id,:title,:song,:singer,:story)
   end
