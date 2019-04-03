@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
   end
 
   def index
-    @comments= Comment.all
+    @comments= Comment.all.search(params[:search])
   end
 
   def about

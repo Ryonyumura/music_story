@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   def show
     @comment= Comment.includes(:opinions).find(params[:id])
     @opinion = Opinion.new
-  
+
   end
 
   def new
