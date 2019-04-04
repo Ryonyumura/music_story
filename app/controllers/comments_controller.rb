@@ -1,17 +1,15 @@
 class CommentsController < ApplicationController
-
   def show
-    @comment= Comment.includes(:opinions).find(params[:id])
+    @comment = Comment.includes(:opinions).find(params[:id])
     @opinion = Opinion.new
-
   end
 
   def new
-    @comment= Comment.new
+    @comment = Comment.new
   end
 
   def create
-    @comment= Comment.new(comment_params)
+    @comment = Comment.new(comment_params)
     if @comment.save
       redirect_to "/"
     else
@@ -20,26 +18,27 @@ class CommentsController < ApplicationController
   end
 
   def edit
-      @comment= Comment.find(params[:id])
+    @comment = Comment.find(params[:id])
   end
 
   def update
-    @comment= Comment.find(params[:id])
+    @comment = Comment.find(params[:id])
     if @comment.update_attributes(comment_params)
-        redirect_to static_pages_index_path
+      redirect_to static_pages_index_path
     else
       redirect_to "edit"
     end
   end
 
   def destroy
-    @comment= Comment.find(params[:id])
+    @comment = Comment.find(params[:id])
     @comment.destroy
     redirect_to static_pages_index_path
   end
 
-private
+  private
+
   def comment_params
-    params.require(:comment).permit(:id,:title,:song,:singer,:story)
+    params.require(:comment).permit(:id, :title, :song, :singer, :story)
   end
 end

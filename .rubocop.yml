@@ -6,7 +6,8 @@ AllCops:
     - 'config/**/*'
     - 'db/**/*'
     - 'bin/*'
-
+    - 'spec/*'
+    - 'app/helpers/application_helper.rb'
 # "Line is too long"を無効
 Metrics/LineLength:
   Enabled: false
