@@ -1,2 +1,12 @@
 inherit_from:
-  - .rubocop_airbnb.yml
+- .rubocop_airbnb.yml
+
+AllCops:
+  Exclude:
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'bin/*'
+
+# "Line is too long"を無効
+Metrics/LineLength:
+  Enabled: false
