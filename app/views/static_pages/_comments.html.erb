@@ -1,6 +1,9 @@
-<% @comments.each do |comment| %>
-<div>
-  <%= link_to comment.title, comment_path(comment)%>
-  <%= link_to "編集する", edit_comment_path(comment) %>
-</div>
-<% end %>
+<ul class="list-group">
+  <% @comments.each do |comment| %>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <%= link_to comment.title, comment_path(comment)%>
+      <span class="badge badge-primary badge-pill">55</span>
+    </li>
+        <%= link_to "↑(編集する)", edit_comment_path(comment) %>
+  <% end %>
+</ul>

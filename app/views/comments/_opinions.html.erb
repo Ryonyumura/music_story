@@ -1,10 +1,29 @@
+<div class="list-group">
 <% @comment.opinions.each do |opinion| %>
-  <%= opinion.name %>
-  <%= opinion.content %>
+  <a class="list-group-item">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1"><%= opinion.id %>:<%= opinion.name %></h5>
+      <small><%= opinion.created_at %></small>
+    </div>
+    <p class="mb-1"><%= opinion.content %></p>
+    <small>Donec id elit non mi porta.</small>
+  </a>
 <% end %>
+</div>
 
-<%= form_for @opinion, url: comment_opinions_path(@comment, @opinion) do |f| %>
- 	名前: <%= f.text_field :name %> <br>
- 	コメント: <%= f.text_area :content %> <br>
- 	<%= f.submit %>
- 	<% end %>
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">コメントしてみよう</h4>
+      <%= form_for @opinion, url: comment_opinions_path(@comment, @opinion) do |f| %>
+        <div class="form-group">
+          <%= f.label :名前 %>
+          <%= f.text_field :name, class:'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :コメント %>
+          <%= f.text_area :content, class:'form-control' %>
+        </div>
+      <%= f.submit value="投稿する" %>
+      <% end %>
+  </div>
+</div>

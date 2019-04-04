@@ -1,25 +1,24 @@
 <% provide :title, '編集' %>
-<div class="row">
-  <div class="col-mod-6 col-md-offset-3">
+
     <%= form_for(@comment) do |f| %>
+      <div class="form-group">
         <%= f.label :タイトル %>
         <%= f.text_field :title, class:'form-control'%>
 
         <%= f.label :曲名 %>
-        <%= f.text_field :song %>
+        <%= f.text_field :song, class:'form-control' %>
 
         <%= f.label :歌手 %>
-        <%= f.text_field :singer %>
+        <%= f.text_field :singer, class:'form-control' %>
 
         <%= f.label :思い出 %>
-        <%= f.text_area :story %>
+        <%= f.text_area :story, class:'form-control' %>
 
         <%= f.label :いつ %>
-        <%= f.text_field :when %>
+        <%= f.text_field :when, class:'form-control' %>
 
-      <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+        <%= f.submit class: "btn btn-large btn-primary" %>
+      </div>
     <% end %>
-  </div>
-  <%= link_to "削除する", comment_path(@comment),method: :delete, data: {confirm: "本当に削除しますか？"} %>
-  <%= link_to "戻る", static_pages_index_path %>
-</div>
+<p class="text-muted"> <%= link_to "削除する", comment_path(@comment),method: :delete, data: {confirm: "本当に削除しますか？"} %></p>
+<p class="text-muted"><%= link_to "戻る", static_pages_index_path %></p>

@@ -1,11 +1,13 @@
 <% provide :title, @comment.title %>
-<div>
-  <p><%= @comment.title %></p>
-  <p><%= @comment.story %></p>
-  <p><%= @comment.song %></p>
-  <p><%= @comment.singer %></p>
-  <p><%= @comment.when %></p>
-</div>
 
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h3 class="display-3"><%= @comment.title %></h3>
+      <p>あれは<%= @comment.when %>の時でした、、</p>
+      <p class="lead"><%= @comment.story %></p>
+      <p>それでは聞いてください。</p>
+      <h5><%= @comment.singer %>で<%= @comment.song %></h5>
+  </div>
+</div>
 
 <%= render "comments/opinions" %>

@@ -1,23 +1,19 @@
 <% provide :title, '新規作成' %>
-<div class="row">
-  <div class="col-mod-6 col-md-offset-3">
-    <%= form_for(@comment) do |f| %>
-        <%= f.label :タイトル %>
-        <%= f.text_field :title, class:'form-control'%>
+<%= form_for(@comment) do |f| %>
+    <%= f.label :タイトル %>
+    <%= f.text_field :title, class:'form-control'%>
 
-        <%= f.label :曲名 %>
-        <%= f.text_field :song %>
+    <%= f.label :曲名 %>
+    <%= f.text_field :song, class:'form-control' %>
 
-        <%= f.label :歌手 %>
-        <%= f.text_field :singer %>
+    <%= f.label :歌手 %>
+    <%= f.text_field :singer, class:'form-control' %>
 
-        <%= f.label :思い出 %>
-        <%= f.text_area :story %>
+    <%= f.label :思い出 %>
+    <%= f.text_area :story, class:'form-control' %>
 
-        <%= f.label :いつ %>
-        <%= f.text_field :when %>
+    <%= f.label :いつ %>
+    <%= f.text_field :when, class:'form-control' %>
 
-      <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
-    <% end %>
-  </div>
-</div>
+  <%= f.submit class: "btn btn-large btn-primary" %>
+<% end %>
