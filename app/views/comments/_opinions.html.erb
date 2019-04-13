@@ -1,8 +1,8 @@
 <div class="list-group">
-<% @comment.opinions.each do |opinion| %>
+<% @comment.opinions.each_with_index do |opinion,i| %>
   <a class="list-group-item">
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1"><%= opinion.id %>:<%= opinion.name %></h5>
+      <h5 class="mb-1"><%= i+1 %>:<%= opinion.name %></h5>
       <small><%= opinion.created_at %></small>
     </div>
     <p class="mb-1"><%= opinion.content %></p>
