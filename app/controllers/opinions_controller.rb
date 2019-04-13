@@ -10,6 +10,25 @@ class OpinionsController < ApplicationController
     end
   end
 
+  def edit
+    @opinion = Opinion.find(params[:id])
+  end
+
+  def update
+    @opinion = Opinion.find(params[:id])
+    if @opinion.update_attributes(params_opinion)
+      redirect_to static_pages_index_path
+    else
+      redirect_to "edit"
+    end
+  end
+
+  def destroy
+    @opinion = Opinion.find(params[:id])
+    @opinion.destroy
+    redirect_to static_pages_index_path
+  end
+
   private
 
   def params_opinion

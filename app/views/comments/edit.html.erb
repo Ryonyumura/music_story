@@ -20,5 +20,5 @@
         <%= f.submit class: "btn btn-large btn-primary" %>
       </div>
     <% end %>
-<p class="text-muted"> <%= link_to "削除する", comment_path(@comment),method: :delete, data: {confirm: "本当に削除しますか？"} %></p>
+<p class="text-muted"><%= link_to "削除する", comment_path(@comment),method: :delete, data: {confirm: "本当に削除しますか？"} %></p>
 <p class="text-muted"><%= link_to "戻る", static_pages_index_path %></p>

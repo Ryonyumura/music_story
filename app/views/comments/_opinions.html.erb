@@ -6,7 +6,7 @@
       <small><%= opinion.created_at %></small>
     </div>
     <p class="mb-1"><%= opinion.content %></p>
-    <small>Donec id elit non mi porta.</small>
+    <%= link_to "(編集する)", edit_comment_opinion_path(@comment,opinion) %>
   </a>
 <% end %>
 </div>

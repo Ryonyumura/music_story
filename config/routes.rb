@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'static_pages/help',  to: 'static_pages#help'
   get 'static_pages/about',  to: 'static_pages#about'
   resources :comments do
-    resources :opinions, only:[:create, :destroy]
+    resources :opinions, only:[ :edit, :update, :create, :destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
