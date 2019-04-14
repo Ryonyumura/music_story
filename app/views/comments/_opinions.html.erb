@@ -6,6 +6,7 @@
       <small><%= opinion.created_at %></small>
     </div>
     <p class="mb-1"><%= opinion.content %></p>
+    <p class="mb-1"><%=image_tag opinion.image.url if opinion.image? %></p>
     <%= link_to "(編集する)", edit_comment_opinion_path(@comment,opinion) %>
   </a>
 <% end %>
@@ -22,6 +23,10 @@
         <div class="form-group">
           <%= f.label :コメント %>
           <%= f.text_area :content, class:'form-control' %>
+        </div>
+        <div class="form-group">
+          <%=f.label "画像をアップロード" %>
+          <%= f.file_field :image, class:'form-control' %>
         </div>
       <%= f.submit value="投稿する" %>
       <% end %>

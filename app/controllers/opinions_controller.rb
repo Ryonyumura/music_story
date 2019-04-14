@@ -32,6 +32,6 @@ class OpinionsController < ApplicationController
   private
 
   def params_opinion
-    params.require(:opinion).permit(:comment_id, :name, :content)
+    params.require(:opinion).permit(:comment_id, :name, :content, :image, :remove_image)
   end
 end
