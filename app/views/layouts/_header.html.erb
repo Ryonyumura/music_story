@@ -26,7 +26,7 @@
        </li>
     </ul>
     <%= form_tag(static_pages_index_path,:method => 'get') do %>
-    <%= text_field_tag :search %>
+    <%= text_field_tag :search,'', placeholder:"思い出そんぐを探す"  %>
     <%= submit_tag 'Search' %>
     <% end %>
   </div>

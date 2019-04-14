@@ -18,11 +18,11 @@
       <%= form_for @opinion, url: comment_opinions_path(@comment, @opinion) do |f| %>
         <div class="form-group">
           <%= f.label :名前 %>
-          <%= f.text_field :name, class:'form-control' %>
+          <%= f.text_field :name,placeholder:"名無しマン", class:'form-control' %>
         </div>
         <div class="form-group">
           <%= f.label :コメント %>
-          <%= f.text_area :content, class:'form-control' %>
+          <%= f.text_area :content,placeholder:"ええやんけ、、",class:'form-control' %>
         </div>
         <div class="form-group">
           <%=f.label "画像をアップロード" %>

@@ -1,19 +1,19 @@
 <% provide :title, '新規作成' %>
 <%= form_for(@comment) do |f| %>
     <%= f.label :タイトル %>
-    <%= f.text_field :title, class:'form-control'%>
+    <%= f.text_field :title,placeholder:"例）最後の一曲", class:'form-control'%>
 
     <%= f.label :曲名 %>
-    <%= f.text_field :song, class:'form-control' %>
+    <%= f.text_field :song,placeholder:"例）永遠の嘘をついてくれ",  class:'form-control' %>
 
     <%= f.label :歌手 %>
-    <%= f.text_field :singer, class:'form-control' %>
+    <%= f.text_field :singer,placeholder:"例）中島みゆき",  class:'form-control' %>
 
     <%= f.label :思い出 %>
-    <%= f.text_area :story, class:'form-control' %>
+    <%= f.text_area :story,placeholder:"例）彼女と最後に会う日でした。",  class:'form-control' %>
 
     <%= f.label :いつ %>
-    <%= f.text_field :when, class:'form-control' %>
+    <%= f.text_field :when,placeholder:"例）高校３年生",  class:'form-control' %>
 
   <%= f.submit class: "btn btn-large btn-primary" %>
 <% end %>

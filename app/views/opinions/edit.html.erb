@@ -3,7 +3,7 @@
 <%= form_for(@opinion,url:comment_opinion_path,method: :patch) do |f| %>
   <div class="form-group">
     <%= f.label :名前 %>
-    <%= f.text_field :name, class:'form-control'%>
+    <%= f.text_field :name,class:'form-control'%>
 
     <%= f.label :コメント %>
     <%= f.text_field :content, class:'form-control' %>
