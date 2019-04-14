@@ -4,6 +4,5 @@
      <a href=<%=comment_path(comment)%>><%= i+1 %>:<%= comment.title%></a>
       <span class="badge badge-primary badge-pill"><%= comment.opinions.count %></span>
     </li>
-    <%= link_to "↑(編集する)", edit_comment_path(comment) %>
   <% end %>
 </ul>

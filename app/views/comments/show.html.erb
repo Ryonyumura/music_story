@@ -2,10 +2,11 @@
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h3 class="display-3"><%= @comment.title %></h3>
-      <p>あれは<%= @comment.when %>の時でした、、</p>
-      <p class="lead"><%= @comment.story %></p>
-      <p>それでは聞いてください。</p>
+    <a class="display-3" href=<%= edit_comment_path(@comment) %>>
+      <%= @comment.title %></a>
+        <p>あれは<%= @comment.when %>の時でした、、</p>
+        <p class="lead"><%= @comment.story %></p>
+        <p>それでは聞いてください。</p>
       <h5><%= @comment.singer %>で<%= @comment.song %></h5>
   </div>
 </div>

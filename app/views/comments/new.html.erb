@@ -1,4 +1,5 @@
 <% provide :title, '新規作成' %>
+
 <%= form_for(@comment) do |f| %>
     <%= f.label :タイトル %>
     <%= f.text_field :title,placeholder:"例）最後の一曲", class:'form-control'%>
@@ -15,5 +16,5 @@
     <%= f.label :いつ %>
     <%= f.text_field :when,placeholder:"例）高校３年生",  class:'form-control' %>
 
-  <%= f.submit class: "btn btn-large btn-primary" %>
+  <%= f.submit value= "投稿する", class: "btn btn-large btn-primary" %>
 <% end %>

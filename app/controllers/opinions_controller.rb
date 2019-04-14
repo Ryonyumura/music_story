@@ -3,6 +3,7 @@ class OpinionsController < ApplicationController
     @comment = Comment.find(params[:comment_id])
     @opinion = Opinion.new(params_opinion)
     @opinion.comment = @comment
+
     if @opinion.save
       redirect_to comment_path(@comment)
     else
@@ -16,6 +17,7 @@ class OpinionsController < ApplicationController
 
   def update
     @opinion = Opinion.find(params[:id])
+
     if @opinion.update_attributes(params_opinion)
       redirect_to static_pages_index_path
     else

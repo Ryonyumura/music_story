@@ -1,14 +1,14 @@
 <div class="list-group">
 <% @comment.opinions.each_with_index do |opinion,i| %>
-  <a class="list-group-item">
+  <div class="list-group-item" >
     <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1"><%= i+1 %>:<%= opinion.name %></h5>
+      <a class="mb-1" href=<%=edit_comment_opinion_path(@comment,opinion)%> >
+        <%= i+1 %>:<%= opinion.name %></a>
       <small><%= opinion.created_at %></small>
     </div>
     <p class="mb-1"><%= opinion.content %></p>
     <p class="mb-1"><%=image_tag opinion.image.url if opinion.image? %></p>
-    <%= link_to "(編集する)", edit_comment_opinion_path(@comment,opinion) %>
-  </a>
+  </div>
 <% end %>
 </div>
 
@@ -28,7 +28,7 @@
           <%=f.label "画像をアップロード" %>
           <%= f.file_field :image, class:'form-control' %>
         </div>
-      <%= f.submit value="投稿する" %>
+          <%= f.submit value="コメントする", class: "btn btn-large btn-primary" %>
       <% end %>
   </div>
 </div>
