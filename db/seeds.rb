@@ -12,3 +12,11 @@ Comment.create!(title:  "お別れの歌",
   story:Faker::Quote.famous_last_words,
   when:Faker::Time.between(DateTime.now - 1, DateTime.now))
 end
+
+
+comments = Comment.order(:created_at).take(40)
+
+20.times do
+  comments.each_with_index{|comment, index|
+  comment.opinions.create!(name: "名無しマンその#{index}",content:"いいんじゃないかなその#{index}")}
+end

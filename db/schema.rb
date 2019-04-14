@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_04_14_061833) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.index ["comment_id"], name: "index_opinions_on_comment_id"
   end
 
 end
