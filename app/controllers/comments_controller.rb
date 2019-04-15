@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   def show
     @comment = Comment.includes(:opinions).find(params[:id])
     @opinion = Opinion.new
+    @opinions = Opinion.find_by(comment_id: params[:id])
   end
 
   def new

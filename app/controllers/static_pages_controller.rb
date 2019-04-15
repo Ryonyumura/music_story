@@ -3,7 +3,7 @@ class StaticPagesController < ApplicationController
   end
 
   def index
-    @comments = Comment.all.search(params[:search]).order('created_at desc')
+    @comments = Comment.all.search(params[:search]).paginate(page: params[:page], per_page: 30).order('created_at desc')
   end
 
   def about
